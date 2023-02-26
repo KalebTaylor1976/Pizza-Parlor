@@ -1,0 +1,40 @@
+// Test case for creating a new Pizza object
+describe("Pizza", () => {
+  it("creates a new Pizza object with toppings and size properties", () => {
+    const toppings = ["cheese", "pepperoni"];
+    const size = "medium";
+    const pizza = new Pizza(toppings, size);
+    expect(pizza.toppings).toEqual(toppings);
+    expect(pizza.size).toEqual(size);
+  });
+});
+
+// Test case for calculating the cost of a Pizza object
+describe("calculateCost", () => {
+  it("calculates the cost of a Pizza object based on toppings and size", () => {
+    const toppings = ["cheese", "pepperoni"];
+    const size = "medium";
+    const pizza = new Pizza(toppings, size);
+    const cost = pizza.calculateCost();
+    expect(cost).toEqual(12);
+  });
+});
+
+// Test case for selecting toppings and size
+describe("calculateCost", () => {
+  it("calculates the cost of a Pizza object based on the selected toppings and size", () => {
+    document.body.innerHTML = `
+      <form>
+        <input type="checkbox" name="toppings" value="cheese" checked>
+        <input type="checkbox" name="toppings" value="pepperoni" checked>
+        <select name="size">
+          <option value="small">Small</option>
+          <option value="medium" selected>Medium</option>
+          <option value="large">Large</option>
+        </select>
+      </form>
+    `;
+    calculateCost();
+    expect(document.getElementById("cost").innerHTML).toEqual("Total cost: $12");
+  });
+});
