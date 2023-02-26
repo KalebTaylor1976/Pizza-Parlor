@@ -24,3 +24,17 @@ Pizza.prototype.calculateCost = function() {
   if (this.toppings.includes("pepperoni")) {
     cost += 2;
   }
+  if (this.toppings.includes("anchovy")) {
+    cost += 4;
+  }
+  return cost;
+}
+
+function calculateCost() {
+  var toppings = [];
+  var checkboxes = document.getElementsByName("toppings");
+  for (var i = 0; i < checkboxes.length; i++) {
+    if (checkboxes[i].checked) {
+      toppings.push(checkboxes[i].value);
+    }
+  }
