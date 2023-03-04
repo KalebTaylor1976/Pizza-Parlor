@@ -20,3 +20,31 @@ class Pizza {
       default:
         break;
     }
+    cost += this.toppings.reduce((total, topping) => {
+      switch (topping) {
+        case "cheese":
+          return total + 1;
+        case "pepperoni":
+          return total + 2;
+        case "artichoke":
+          return total + 3;
+        case "anchovy":
+          return total + 4;
+        default:
+          return total;
+      }
+    }, 0);
+
+    return cost + this.price;
+  }
+}
+function calculateCost() {
+  const toppings = Array.from(document.getElementsByName("toppings"))
+    .filter(checkbox => checkbox.checked)
+    .map(checkbox => checkbox.value);
+  const size = document.getElementById("size").value;
+  const price = parseFloat(document.getElementById("price").value);
+  const pizza = new Pizza(toppings, size, price);
+  const cost = pizza.calculateCost();
+  document.getElementById("cost").innerHTML = `Total cost: $${cost.toFixed(2)}`;
+}
