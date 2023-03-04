@@ -1,4 +1,8 @@
-.pizza-order-form {
+body {
+  background-color: rgb(92, 91, 99);
+}
+ 
+ .pizza-order-form {
   max-width: 600px;
   margin: 0 auto;
   padding: 20px;
