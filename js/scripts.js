@@ -38,13 +38,14 @@ class Pizza {
     return cost + this.price;
   }
 }
+
 function calculateCost() {
   const toppings = Array.from(document.getElementsByName("toppings"))
     .filter(checkbox => checkbox.checked)
     .map(checkbox => checkbox.value);
   const size = document.getElementById("size").value;
-  const price = parseFloat(document.getElementById("price").value);
-  const pizza = new Pizza(toppings, size, price);
+  const pizza = new Pizza(toppings, size, 0);
   const cost = pizza.calculateCost();
   document.getElementById("cost").innerHTML = `Total cost: $${cost.toFixed(2)}`;
 }
+
