@@ -3,12 +3,16 @@
   <head>
     <link href="css/styles.css" rel="stylesheet" type="text/css">
     <script src="js/scripts.js"></script>
-    <img src="Pizza.jpg" alt="Pizza">
     <title>Pizza Order Form</title>
+    <style>
+       img {
+        align-self: auto;
+      }
+    </style>
   </head>
   <body>
     <div class="pizza-order-form">
-      <h1>Order Your Pizza</h1>
+      <img src="Pizza.jpg" alt="Pizza">
       <form>
         <fieldset>
           <legend>Pizza Options</legend>
@@ -19,24 +23,25 @@
               <option value="medium" selected>Medium - $10.00</option>
               <option value="large">Large - $12.00</option>
             </select>
-          <label>Toppings:</label>
-          <div class="checkbox-group">
-            <label>
-              <input type="checkbox" name="toppings" value="cheese">
-              Cheese
-            </label>
-            <label>
-              <input type="checkbox" name="toppings" value="pepperoni">
-              Pepperoni
-            </label>
-            <label>
-              <input type="checkbox" name="toppings" value="artichoke">
-              Artichoke
-            </label>
-            <label>
-              <input type="checkbox" name="toppings" value="anchovy">
-              Anchovy
-            </label>
+            <label>Toppings:</label>
+            <div class="checkbox-group">
+              <label>
+                <input type="checkbox" name="toppings" value="cheese">
+                Cheese
+              </label>
+              <label>
+                <input type="checkbox" name="toppings" value="pepperoni">
+                Pepperoni
+              </label>
+              <label>
+                <input type="checkbox" name="toppings" value="artichoke">
+                Artichoke
+              </label>
+              <label>
+                <input type="checkbox" name="toppings" value="anchovy">
+                Anchovy
+              </label>
+            </div>
           </div>
         </fieldset>
         <div class="form-actions">
@@ -47,4 +52,4 @@
     </div>
   </body>
 </html>
- 
+
