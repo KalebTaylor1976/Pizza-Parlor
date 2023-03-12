@@ -42,9 +42,10 @@ class Pizza {
 
 function calculateCost() {
   const toppings = Array.from(document.getElementsByName("toppings"))
-    .filter(checkbox => checkbox.checked)
-    .map(checkbox => checkbox.value);
+    .filter((checkbox) => checkbox.checked)
+    .map((checkbox) => checkbox.value);
   const size = document.getElementById("size").value;
   const pizza = new Pizza(toppings, size, 0);
-  document.getElementById("cost").innerHTML = `Total cost: $${pizza.cost.toFixed(2)}`;
+  const cost = pizza.cost;
+  document.getElementById("cost").innerHTML = `Total cost: $${cost.toFixed(2)}`;
 }
