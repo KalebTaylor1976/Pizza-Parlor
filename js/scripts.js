@@ -3,6 +3,7 @@ class Pizza {
     this.toppings = toppings;
     this.size = size;
     this.price = price;
+    this.cost = this.calculateCost();
   }
 
   calculateCost() {
@@ -45,7 +46,5 @@ function calculateCost() {
     .map(checkbox => checkbox.value);
   const size = document.getElementById("size").value;
   const pizza = new Pizza(toppings, size, 0);
-  const cost = pizza.calculateCost();
-  document.getElementById("cost").innerHTML = `Total cost: $${cost.toFixed(2)}`;
+  document.getElementById("cost").innerHTML = `Total cost: $${pizza.cost.toFixed(2)}`;
 }
-
